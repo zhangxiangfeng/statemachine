@@ -1,7 +1,5 @@
 package com.github.shxz130.statemachine.demo.config;
 
-import lombok.Data;
-
 /**
  * Created by jetty on 2019/7/31.
  */

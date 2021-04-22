@@ -23,7 +23,6 @@ public class Main {
         transactionContext.setData(LeavePermitContextConstants.CURRENT_STATE, LeavePermitState.SUBMIT_PERMIT);
         StateMachineFactory.getStateMachine("LEAVE_PERMIT").fire(LeavePermitEvent.SUBMIT_PERMIT, transactionContext);
 
-
         log.info("领导审批");
         LeavePermit leavePermit=(LeavePermit)transactionContext.getData(LeavePermitContextConstants.LEAVE_PERMIT);
         TransactionContext transactionContext2=new TransactionContext();

@@ -9,12 +9,12 @@ import java.util.Map;
  * Created by jetty on 2019/7/31.
  */
 
-public class StateConfiguration<S, E,H> {
+public class StateConfiguration<S, E, H> {
 
     @Getter
     private S currentState;
 
-    private Map<E,H> eventHandleMap;
+    private Map<E, H> eventHandleMap;
 
     private Map<E, S> nextStateMap;
 
@@ -24,19 +24,19 @@ public class StateConfiguration<S, E,H> {
         nextStateMap = new HashMap<E, S>(8);
     }
 
-    public void configEventHandle(E e,H h){
-        eventHandleMap.put(e,h);
+    public void configEventHandle(E e, H h) {
+        eventHandleMap.put(e, h);
     }
 
-    public void configEventNextState(E e,S s){
-        nextStateMap.put(e,s);
+    public void configEventNextState(E e, S s) {
+        nextStateMap.put(e, s);
     }
 
-    public H getHandle(E e){
+    public H getHandle(E e) {
         return eventHandleMap.get(e);
     }
 
-    public S getNextState(E e){
+    public S getNextState(E e) {
         return nextStateMap.get(e);
     }
 }
